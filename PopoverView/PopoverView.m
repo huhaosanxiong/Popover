@@ -4,7 +4,7 @@
 #import "PopoverViewCell.h"
 
 static CGFloat const kPopoverViewMargin = 8.f;        ///< 边距
-static CGFloat const kPopoverViewCellHeight = 40.f;   ///< cell指定高度
+static CGFloat const kPopoverViewCellHeight = 51.f;   ///< cell指定高度
 static CGFloat const kPopoverViewArrowHeight = 13.f;  ///< 箭头高度
 
 static NSString *kPopoverCellReuseId = @"_PopoverCellReuseId";
