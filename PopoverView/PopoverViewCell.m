@@ -5,7 +5,7 @@
 // extern
 float const PopoverViewCellHorizontalMargin = 15.f; ///< 水平边距
 float const PopoverViewCellVerticalMargin = 3.f; ///< 垂直边距
-float const PopoverViewCellTitleLeftEdge = 8.f; ///< 标题左边边距
+float const PopoverViewCellTitleLeftEdge = 10.f; ///< 标题左边边距
 
 @interface PopoverViewCell ()
 
@@ -72,7 +72,7 @@ float const PopoverViewCellTitleLeftEdge = 8.f; ///< 标题左边边距
     [self.contentView addSubview:bottomLine];
     _bottomLine = bottomLine;
     // Constraint
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bottomLine]|" options:kNilOptions metrics:nil views:NSDictionaryOfVariableBindings(bottomLine)]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-margin-[bottomLine]|" options:kNilOptions metrics:@{@"margin" : @(PopoverViewCellHorizontalMargin + 18 + PopoverViewCellTitleLeftEdge)} views:NSDictionaryOfVariableBindings(bottomLine)]];
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bottomLine(lineHeight)]|" options:kNilOptions metrics:@{@"lineHeight" : @(1/[UIScreen mainScreen].scale)} views:NSDictionaryOfVariableBindings(bottomLine)]];
 }
 

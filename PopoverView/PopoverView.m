@@ -304,6 +304,8 @@ float PopoverViewDegreesToRadians(float angle)
     CGSize imageSize = CGSizeZero;
     UIFont *titleFont = [PopoverViewCell titleFont];
     
+    CGFloat tempWidth = [@"四字长度" sizeWithAttributes:@{NSFontAttributeName : titleFont}].width;
+    
     for (PopoverAction *action in _actions) {
        
         imageWidth = 0.f;
@@ -333,6 +335,8 @@ float PopoverViewDegreesToRadians(float angle)
             titleWidth = [action.title sizeWithFont:titleFont].width;
 #pragma GCC diagnostic pop
         }
+        
+        titleWidth = MAX(tempWidth, titleWidth);
         
         CGFloat contentWidth = PopoverViewCellHorizontalMargin*2 + imageWidth + titleLeftEdge + titleWidth;
         if (contentWidth > maxWidth) {
